@@ -1,24 +1,74 @@
-# Claude Agents Collection
+<div align="center">
 
-Colección de agentes personalizados para Claude Code CLI / Copilot.
+# 🤖 Claude Agents Collection
 
-## ¿Qué son los Agentes?
+### Colección de Agentes Especializados para Claude Code CLI / Copilot
+ 
+[![Agents](https://img.shields.io/badge/agents-10-blue?style=flat-square)]()
+[![Design Patterns](https://img.shields.io/badge/patterns-10-green?style=flat-square)]()
+[![Documentation](https://img.shields.io/badge/docs-complete-orange?style=flat-square)]()
+[![Language](https://img.shields.io/badge/lang-ES-red?style=flat-square)]()
 
-Los agentes son asistentes especializados con conocimientos profundos en áreas específicas. A diferencia de las skills (que son herramientas/workflows), los agentes tienen expertise en dominios técnicos.
+[Instalación](#-instalación) • [Agentes](#-agentes-disponibles) • [Uso](#-uso) • [Recursos](#-recursos-adicionales) • [Contribuir](#-contribuir)
 
-## Instalación
+</div>
 
-Para usar estos agentes, copia los archivos `.md` a tu directorio local de agentes:
+---
+
+## 📖 ¿Qué son los Agentes?
+
+Los agentes son asistentes especializados con conocimientos profundos en áreas específicas del desarrollo de software. A diferencia de las skills (herramientas/workflows), los agentes aportan **expertise técnico especializado** en dominios como arquitectura, testing, DevOps, calidad de código y más.
+
+### ✨ Características
+
+- 🎯 **Especialización**: Cada agente es experto en su dominio
+- 📚 **Conocimiento Base**: Incluye documentación de referencia (patrones, principios SOLID)
+- 🔄 **Integrados**: Los agentes trabajan juntos compartiendo conocimiento
+- 🚀 **Listos para usar**: Solo copia y comienza a trabajar
+
+## 📦 Instalación
+
+### Instalación Completa
 
 ```bash
 # Copiar todos los agentes
-cp agents/*.md ~/.claude/agents/
+cp *.md ~/.claude/agents/
 
-# O copiar un agente específico
-cp agents/devops-deployment-expert.md ~/.claude/agents/
+# Copiar recursos de referencia
+cp -r design_patterns ~/.claude/agents/
+cp -r good_practices ~/.claude/agents/
 ```
 
-## Agentes Disponibles
+### Instalación Individual
+
+```bash
+# Solo un agente específico
+cp devops-deployment-expert.md ~/.claude/agents/
+```
+
+### Verificación
+
+```bash
+# Listar agentes instalados
+ls ~/.claude/agents/
+```
+
+---
+
+## 🤖 Agentes Disponibles
+
+<div align="center">
+
+| Categoría | Agentes | Descripción |
+|-----------|---------|-------------|
+| 🚀 **DevOps** | 1 agente | Deployment, K8s, CI/CD, Cloud |
+| 💻 **Backend** | 1 agente | Spring Boot, Java, Microservicios |
+| 🎨 **Frontend** | 1 agente | Angular, TypeScript, SPA |
+| 🏗️ **Arquitectura** | 3 agentes | Diseño, Patrones, Calidad de Código |
+| 📋 **Product** | 2 agentes | Casos de Uso, User Stories |
+| 🧪 **QA** | 1 agente | API Testing, Validación Automatizada |
+
+</div>
 
 ### 🚀 DevOps & Infrastructure
 
@@ -233,9 +283,45 @@ Experto en QA de APIs, testing automatizado y validación contra casos de uso.
 - Testing de endpoints protegidos con autenticación
 - Ejecutar tests contra versión más reciente del código (auto-recompila)
 
-## Uso
+## 🚀 Quick Start
 
-Los agentes se invocan automáticamente cuando Claude / Copilot detecta que tu consulta requiere expertise especializado, o puedes mencionarlos explícitamente en tu prompt.
+### 1. Instala los agentes
+```bash
+cp *.md ~/.claude/agents/
+cp -r design_patterns good_practices ~/.claude/agents/
+```
+
+### 2. Usa los agentes en tu conversación
+
+Los agentes se activan automáticamente cuando Claude detecta que necesitas expertise especializado:
+
+**Ejemplo - DevOps:**
+```
+Usuario: "Necesito configurar un pipeline CI/CD para mi app Spring Boot en GCP"
+→ Claude activará automáticamente devops-deployment-expert
+```
+
+**Ejemplo - Backend:**
+```
+Usuario: "Implementa un endpoint REST con Spring Boot para gestionar usuarios"
+→ Claude activará backend-developer + design-patterns-expert
+```
+
+**Ejemplo - Testing:**
+```
+Usuario: "Valida que la API cumple con el caso de uso CU-001"
+→ Claude activará qa-api-testing-expert
+```
+
+### 3. O invócalos explícitamente
+
+```
+"Usando design-patterns-expert, refactoriza esta clase aplicando el patrón Strategy"
+```
+
+---
+
+## 💡 Uso
 
 ## Crear Nuevos Agentes
 
@@ -353,17 +439,120 @@ Los recursos están integrados con los agentes:
 | **code-quality-analyzer** | Referencias a `good_practices/` |
 | **backend-developer** | Aplica patrones y principios SOLID |
 
-## Contribuir
+---
 
-Para agregar o modificar agentes:
+## 📊 Estadísticas del Proyecto
 
-1. **Crear rama**: `git checkout -b feature/agent-nombre`
-2. **Completar contenido**: Seguir estructuras existentes
-3. **Actualizar este README**: Añadir a la sección correspondiente
-4. **Pull Request**: Incluir descripción y ejemplos de uso
+<div align="center">
 
-Para contribuir a la documentación de recursos:
+| Métrica | Valor |
+|---------|-------|
+| **Total de Agentes** | 10 |
+| **Design Patterns Documentados** | 10 |
+| **Líneas de Documentación** | 9,000+ |
+| **Ejemplos de Código** | 50+ |
+| **Principios SOLID** | 5 |
+| **Niveles de Cohesión** | 7 |
+| **Tipos de Acoplamiento** | 6 |
 
-1. **Design Patterns**: Seguir estructura de 10 secciones
-2. **Good Practices**: Incluir ejemplos antes/después
-3. **Actualizar READMEs**: Mantener índices actualizados
+</div>
+
+---
+
+## 🤝 Contribuir
+
+¡Las contribuciones son bienvenidas! Este proyecto crece con la comunidad.
+
+### 📝 Agregar un Nuevo Agente
+
+1. **Fork el repositorio**
+2. **Crea una rama**: `git checkout -b feature/agent-nombre`
+3. **Usa el template**: Copia `templates/agent.md` como base
+4. **Completa todas las secciones**:
+   - Rol y responsabilidades
+   - Conocimiento base específico
+   - Instrucciones paso a paso
+   - Ejemplos de uso (mínimo 3)
+   - Mejores prácticas
+   - Referencias
+5. **Actualiza este README**: Añade tu agente a la sección correspondiente
+6. **Commit**: `git commit -m "feat: add [nombre-agente] expert"`
+7. **Push**: `git push origin feature/agent-nombre`
+8. **Pull Request**: Incluye descripción completa y ejemplos
+
+### 📚 Mejorar Documentación
+
+**Design Patterns:**
+- Agregar nuevos patrones GoF
+- Mejorar ejemplos existentes
+- Añadir diagramas UML
+- Incluir casos de uso reales
+
+**Good Practices:**
+- Expandir guías SOLID
+- Agregar métricas de calidad
+- Documentar code smells
+- Incluir ejemplos antes/después
+
+### ✅ Checklist de Calidad
+
+Antes de enviar tu PR, verifica:
+
+- [ ] Nombre en kebab-case (`nombre-agente.md`)
+- [ ] Todas las secciones completas
+- [ ] Mínimo 3 ejemplos de uso
+- [ ] Código de ejemplo funcional
+- [ ] Mejores prácticas con ✅/❌
+- [ ] Referencias actualizadas
+- [ ] README actualizado
+- [ ] Sin errores de ortografía
+- [ ] Formato Markdown correcto
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+```
+MIT License - Libre para uso comercial y personal
+```
+
+---
+
+## 🗺️ Roadmap
+
+### En Desarrollo
+- [ ] Angular Microfrontend Expert
+- [ ] Python Backend Expert
+- [ ] Database Expert (PostgreSQL, MongoDB)
+- [ ] Security Expert (OWASP, penetration testing)
+
+### Planeado
+- [ ] React Frontend Expert
+- [ ] Cloud Expert (AWS, Azure, GCP)
+- [ ] Machine Learning Expert
+- [ ] GraphQL Expert
+- [ ] Documentación en inglés
+
+---
+
+## 🔗 Enlaces Útiles
+
+- 📖 [Documentación de Claude Code CLI](https://docs.anthropic.com/claude/docs)
+- 🎯 [Guía de Design Patterns](design_patterns/README.md)
+- ✨ [Principios SOLID](good_practices/README.md)
+- 💬 [Discusiones y Preguntas](../../discussions)
+- 🐛 [Reportar Issues](../../issues)
+
+---
+
+<div align="center">
+
+**Hecho con ❤️ para la comunidad de desarrolladores**
+
+⭐ **Si te resulta útil, considera darle una estrella al proyecto**
+
+[⬆ Volver arriba](#-claude-agents-collection)
+
+</div>

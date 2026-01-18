@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🤖 Claude Agents Collection
+# 🤖 Claude / Copilot Agents Collection
 
 ### Colección de Agentes Especializados para Claude Code CLI / Copilot
  
